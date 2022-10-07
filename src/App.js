@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Card from "./Cards";
+import data from "./data";
 
 function App() {
+  // function ncard(value) {
+  //   ;
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="heading_style">MOVIE LIST</h1>
+
+      {data.map(function ncard(value) {
+        return (
+          <Card
+            imgsrc={value.imgsrc}
+            title={value.title}
+            year={value.year}
+            distributor={value.distributor}
+            amount={value.amount}
+            ranking={value.ranking}
+          />
+        );
+      })}
+    </>
   );
 }
 
